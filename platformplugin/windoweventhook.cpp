@@ -438,7 +438,7 @@ void WindowEventHook::handleFocusOutEvent(const xcb_focus_out_event_t *event)
     // There is however no equivalent for XPutBackEvent so register a
     // callback for QXcbConnection instead.
 #if QT_VERSION >= QT_VERSION_CHECK(5, 13, 0)
-    xcbWindow->connection()->focusInTimer().start(400);
+    xcbWindow->connection()->focusInTimer().start(100);
 #else
     xcbWindow->connection()->addPeekFunc(focusInPeeker);
 #endif
